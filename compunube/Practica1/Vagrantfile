@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define :clienteUbuntu1 do |clienteUbuntu1|
+    clienteUbuntu1.vm.box = "bento/ubuntu-22.04"
+    clienteUbuntu1.vm.network :private_network, ip: "192.168.100.4"
+    clienteUbuntu1.vm.hostname = "clienteUbuntu1"
+  end
+
+  config.vm.define :servidorUbuntu1 do |servidorUbuntu1|
+    servidorUbuntu1.vm.box = "bento/ubuntu-22.04"
+    servidorUbuntu1.vm.network :private_network, ip: "192.168.100.5"
+    servidorUbuntu1.vm.hostname = "servidorUbuntu1"
+  end
+end
